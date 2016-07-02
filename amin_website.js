@@ -44,6 +44,31 @@ function parallaxScroll(evt) {
   }
 }
 
+function touchScroll(ts, te) {
+  delta = te - ts;
+  console.log('para');
+  if (ticking != true) {
+    if (delta <= -scrollSensitivitySetting) {
+      //Down scroll
+      ticking = true;
+      if (currentSlideNumber !== totalSlideNumber - 1) {
+        currentSlideNumber++;
+        nextItem();
+      }
+      slideDurationTimeout(slideDurationSetting);
+    }
+    if (delta >= scrollSensitivitySetting) {
+      //Up scroll
+      ticking = true;
+      if (currentSlideNumber !== 0) {
+        currentSlideNumber--;
+      }
+      previousItem();
+      slideDurationTimeout(slideDurationSetting);
+    }
+  }
+}
+
 // ------------- SET TIMEOUT TO TEMPORARILY "LOCK" SLIDES ------------- //
 function slideDurationTimeout(slideDuration) {
   setTimeout(setTicking, slideDuration);
@@ -54,12 +79,21 @@ function setTicking() {
 }
 
 var mousewheelEvent = isFirefox ? "DOMMouseScroll" : "wheel";
+var ts;
 
 // ------------- ADD EVENT LISTENER ------------- //
 $(document).ready(function () {
   console.log("called once")
   totalSlideNumber = $("section").length;
   window.addEventListener(mousewheelEvent, _.throttle(parallaxScroll, 60), false);
+
+  window.addEventListener("touchstart", function(e) {
+  ts = e.touches[0].clientY;
+}, false);
+window.addEventListener("touchend", function(e) {
+  var te = e.changedTouches[0].clientY;
+  touchScroll(ts, te);
+}, false);
 });
 
 // ------------- SLIDE MOTION ------------- //
