@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 html, body {
-  overflow: hidden;
+  overflow: auto;
   margin: 0px;
   padding: 0px;
 }
@@ -13,7 +13,7 @@ html, body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  overflow: hidden;
+  overflow: auto;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 100;
   will-change: transform;
