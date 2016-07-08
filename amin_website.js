@@ -86,6 +86,8 @@ $(document).ready(function () {
   totalSlideNumber = $("section").length;
   window.addEventListener(mousewheelEvent, _.throttle(parallaxScroll, 60), false);
 
+  $("body").focus();
+
   window.addEventListener("touchstart", function(e) {
   ts = e.touches[0].clientY;
 }, false);
