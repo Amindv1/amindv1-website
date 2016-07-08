@@ -46,7 +46,6 @@ function parallaxScroll(evt) {
 
 function touchScroll(ts, te) {
   delta = te - ts;
-  console.log('para');
   if (ticking != true) {
     if (delta <= -scrollSensitivitySetting) {
       //Down scroll

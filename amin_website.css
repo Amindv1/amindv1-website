@@ -23,7 +23,6 @@ html, body {
   position: fixed;
   text-shadow: black 2px 2px 2px;
   width: 100%;
-  /*-webkit-transform: translateY(30vh);*/
   -webkit-transition: all 1.2s cubic-bezier(0.22, 0.44, 0, 1);
   transition: all 1.2s cubic-bezier(0.22, 0.44, 0, 1);
   color: #fff;
@@ -32,38 +31,40 @@ html, body {
 .background:first-child {
   background-color: rgba(156, 146, 137, 1);
   -webkit-transform: translateY(-15vh);
-          /*transform: translateY(-15vh);*/
 }
 .background:first-child .content-wrapper {
   -webkit-transform: translateY(15vh);
-          /*transform: translateY(15vh);*/
 }
 .background:nth-child(2) {
   background-image: url(2.jpg);
 }
 .background:nth-child(3) {
-  /*background-color: #0079C0;*/
   background-image: url(3.jpg);
 }
-.background:nth-child(4) {
-  /*background-color: #0079C0;*/
+/*.background:nth-child(4) {
   background-image: url(1.jpg);
-}
+}*/
+/*    .background:nth-child(5) {
+  background-image: url(3.jpg);
+}*/
 /* Set stacking context of slides */
 .background:nth-child(1) {
-  z-index: 4;
-}
-.background:nth-child(2) {
   z-index: 3;
 }
-.background:nth-child(3) {
+.background:nth-child(2) {
   z-index: 2;
 }
-.background:nth-child(4) {
+.background:nth-child(3) {
   z-index: 1;
 }
+/*.background:nth-child(4) {
+  z-index: 1;
+}*/
+/*    .background:nth-child(5) {
+  z-index: 1;
+}*/
 .background:nth-child(n+2):before {
-    content: "";
+  content: "";
   position: absolute;
   width: 100%;
   height: 100%;
@@ -73,7 +74,7 @@ html, body {
   right: 0;
   bottom: 0;
 
-    background: -moz-linear-gradient(left,  rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 20%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.5) 80%, rgba(0,0,0,0.1) 100%);
+  background: -moz-linear-gradient(left,  rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 20%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.5) 80%, rgba(0,0,0,0.1) 100%);
   background: -webkit-linear-gradient(left,  rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.5) 20%,rgba(0,0,0,0.5) 50%,rgba(0,0,0,0.5) 80%,rgba(0,0,0,0.1) 100%);
   background: linear-gradient(to right,  rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.5) 20%,rgba(0,0,0,0.5) 50%,rgba(0,0,0,0.5) 80%,rgba(0,0,0,0.1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a000000', endColorstr='#1a000000',GradientType=1 );
@@ -96,10 +97,19 @@ html, body {
   will-change: transform;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
-  -webkit-transform: translateY(40vh);
-          transform: translateY(40vh); 
+  -webkit-transform: translateY(40vh); 
   -webkit-transition: all 1.7s cubic-bezier(0.22, 0.44, 0, 1);
   transition: all 1.7s cubic-bezier(0.22, 0.44, 0, 1);
+}
+iframe {
+  height: 80vh;
+  width: 40vw;
+}
+p.touchstone {
+  word-wrap: break-word;
+  line-height: 160%;
+  font-size: 20px;
+  text-align: left;
 }
 .image-style {
   width:10vw;
@@ -162,17 +172,10 @@ h1{
   font-weight: 300;
   font-size: 8vh;
 }
-.my-class {
-  font-family: Montserrat;
-  text-transform: uppercase;
-  will-change: transform;
-}
-.background-fade {
-  height: 130vh;
-  width: 100vw;
-}
-.skills-programming {
-  /*margin-top: 10vh;*/
+.project-title {
+  font-size: 10vh;
+  line-height: 1.4;
+  font-family: trench;
 }
 .body-wrapper {
   -webkit-box-pack: center;
@@ -181,11 +184,11 @@ h1{
   justify-content: center;
   text-align: center;
   margin: auto;
-  position: fixed;
-  top: 0;
-  width: 50%;
-  left: 50%;
-  transform: translateX(-50%);
+  /*position: fixed;*/
+  /*top: 0;*/
+  /*width: 50%;*/
+  /*left: 50%;*/
+  /*transform: translateX(-50%);*/
 }
 #align-left {
   text-align: left;
