@@ -20,6 +20,7 @@ function parallaxScroll(evt) {
   } else {
     //Set delta for all other browsers
     delta = evt.wheelDelta;
+    console.log(delta)
   }
 
   if (ticking != true){
@@ -82,7 +83,6 @@ var ts;
 
 // ------------- ADD EVENT LISTENER ------------- //
 $(document).ready(function () {
-  console.log("called once")
   totalSlideNumber = $("section").length;
   window.addEventListener(mousewheelEvent, _.throttle(parallaxScroll, 60), false);
 

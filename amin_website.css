@@ -1,22 +1,22 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
+
 html, body {
-  overflow: auto;
+  overflow: hidden;
   margin: 0px;
   padding: 0px;
 }
 @font-face {
     font-family: trench;
-    src: url(fonts/trench/trench100.otf),
-         url(fonts/trench/trench100.ttf);
+    src: url(fonts/trench/trench100.otf);
 }
 .background {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  overflow: auto;
+  overflow: hidden;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 100;
-  will-change: transform;
+  /*will-change: transform;*/
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   height: 130vh;
@@ -30,10 +30,12 @@ html, body {
 
 .background:first-child {
   background-color: rgba(156, 146, 137, 1);
-  -webkit-transform: translateY(-15vh);
+  -webkit-transform: translate3d(0, -15vh, 0);
+  transform: translate3d(0, -15vh, 0);
 }
 .background:first-child .content-wrapper {
-  -webkit-transform: translateY(15vh);
+  -webkit-transform: translate3d(0, 15vh, 0);
+  transform: translate3d(0, 15vh, 0);
 }
 .background:nth-child(2) {
   background-image: url(2.jpg);
@@ -41,13 +43,6 @@ html, body {
 .background:nth-child(3) {
   background-image: url(3.jpg);
 }
-/*.background:nth-child(4) {
-  background-image: url(1.jpg);
-}*/
-/*    .background:nth-child(5) {
-  background-image: url(3.jpg);
-}*/
-/* Set stacking context of slides */
 .background:nth-child(1) {
   z-index: 3;
 }
@@ -57,12 +52,6 @@ html, body {
 .background:nth-child(3) {
   z-index: 1;
 }
-/*.background:nth-child(4) {
-  z-index: 1;
-}*/
-/*    .background:nth-child(5) {
-  z-index: 1;
-}*/
 .background:nth-child(n+2):before {
   content: "";
   position: absolute;
@@ -79,6 +68,7 @@ html, body {
   background: linear-gradient(to right,  rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.5) 20%,rgba(0,0,0,0.5) 50%,rgba(0,0,0,0.5) 80%,rgba(0,0,0,0.1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a000000', endColorstr='#1a000000',GradientType=1 );
 }
+
 .content-wrapper {
   height: 100vh;
   display: -webkit-box;
@@ -94,10 +84,11 @@ html, body {
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
   color: #fff;
-  will-change: transform;
+  /*will-change: transform;*/
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
-  -webkit-transform: translateY(40vh); 
+  -webkit-transform: translate3d(0, 40vh, 0); 
+  transform: translate3d(0, 40vh, 0);
   -webkit-transition: all 1.7s cubic-bezier(0.22, 0.44, 0, 1);
   transition: all 1.7s cubic-bezier(0.22, 0.44, 0, 1);
 }
@@ -116,30 +107,37 @@ p.touchstone {
   height:7vh;
   vertical-align: middle;
 }
-
 .background.up-scroll {
   -webkit-transform: translate3d(0, -15vh, 0);
+  transform: translate3d(0, -15vh, 0);
 }
 .background.up-scroll .content-wrapper {
-  -webkit-transform: translateY(15vh);
+  -webkit-transform: translate3d(0, 15vh, 0);
+  transform: translate3d(0, 15vh, 0);
 }
 .background.up-scroll + .background {
   -webkit-transform: translate3d(0, 30vh, 0);
+  transform: translate3d(0, 30vh, 0);
 }
 .background.up-scroll + .background .content-wrapper {
-  -webkit-transform: translateY(30vh);
+  -webkit-transform: translate3d(0, 30vh, 0);
+  transform: translate3d(0, 30vh, 0);
 }
 .background.down-scroll {
   -webkit-transform: translate3d(0, -130vh, 0);
+  transform: translate3d(0, -130vh, 0);
 }
 .background.down-scroll .content-wrapper {
-  -webkit-transform: translateY(40vh);
+  -webkit-transform: translate3d(0, 40vh, 0);
+  transform: translate3d(0, 40vh, 0);
 }
 .background.down-scroll + .background:not(.down-scroll) {
   -webkit-transform: translate3d(0, -15vh, 0);
+  transform: translate3d(0, -15vh, 0);
 }
 .background.down-scroll + .background:not(.down-scroll) .content-wrapper {
-  -webkit-transform: translateY(15vh);
+  -webkit-transform: translate3d(0, 15vh, 0);
+  transform: translate3d(0, 15vh, 0);
 }
 h1{
   font-family: trench;
@@ -157,9 +155,7 @@ h1{
   line-height: 1.4;
 }
 .map-title-background {
-  /*background-color: #1477C5;*/
   background-color: #4D4D4F;
-  /*background-size: 100vw 100vh;*/
   box-shadow: 0px 10px 5px #888888;
   position: absolute;
   top: 0px;
@@ -184,11 +180,6 @@ h1{
   justify-content: center;
   text-align: center;
   margin: auto;
-  /*position: fixed;*/
-  /*top: 0;*/
-  /*width: 50%;*/
-  /*left: 50%;*/
-  /*transform: translateX(-50%);*/
 }
 #align-left {
   text-align: left;
@@ -198,12 +189,11 @@ h1{
 }
 .map {
   background-image: url(map.png);
-  -webkit-transform: translateX(14vw);
+  -webkit-transform: translate3d(14vw, 0, 0);
+  transform: translate3d(14vw, 0, 0);
   margin-top: 17vh;
   background-size: 75vw 75vh;
-  /*background-color: ;*/
   position: relative;
-  /*background-color: #1477C5;*/
   background-repeat: no-repeat;
   height: 75vh;
   width: 75vw;
@@ -220,12 +210,38 @@ h1{
     -webkit-animation-iteration-count: infinite; 
     opacity: 0.0;
 }
-.gps-wrapper {
-}
 @-webkit-keyframes pulsate {
-    0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
-    25% {opacity: 0.5;}
-    50%{opacity: 1.0;}
-    75%{opacity: 0.5;}
-    100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
+    0%
+    {
+      -webkit-transform: scale(0.1, 0.1); opacity: 0.0;
+      transform: scale(0.1, 0.1) opacity 0.0;
+    }
+    25% 
+    {
+      opacity: 0.5;
+    }
+    50%
+    {
+      opacity: 1.0;
+    }
+    75%
+    {
+      opacity: 0.5;
+    }
+    100%
+    {
+      -webkit-transform: scale(1.2, 1.2); opacity: 0.0;
+            transform: scale(1.2, 1.2) opacity 0.0;
+
+    }
 }
+
+
+
+
+
+
+
+
+
+
