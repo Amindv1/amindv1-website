@@ -27,15 +27,14 @@ html, body {
           backface-visibility: hidden;
   height: 130vh;
   position: fixed;
-  text-shadow: black 2px 2px 2px;
   width: 100%;
   -webkit-transition: all 1.2s cubic-bezier(0.22, 0.44, 0, 1);
   transition: all 1.2s cubic-bezier(0.22, 0.44, 0, 1);
   color: #fff;
 }
-
 .background:first-child {
-  background-color: rgba(156, 146, 137, 1);
+  /*background-color: rgba(156, 146, 137, 1);*/
+  background-color: #f2f2f2;
   -webkit-transform: translate3d(0, -15vh, 0);
   transform: translate3d(0, -15vh, 0);
 }
@@ -161,9 +160,10 @@ h1{
   line-height: 1.4;
 }
 .map-title-background {
-  background-color: #4D4D4F;
-  box-shadow: 0px 10px 5px #888888;
+  background-color: #2E2B2D;
+  box-shadow: 0px 10px 5px #2E2B2D;
   position: absolute;
+  color:#f2f2f2;
   top: 0px;
   left: 0px;
   right: 0px;
@@ -187,11 +187,32 @@ h1{
   text-align: center;
   margin: auto;
 }
+#touchstone-desc {
+  float:left;
+  max-width:30%;
+  margin-left:10%;
+  margin-top: 3%;
+}
 #align-left {
   text-align: left;
 }
+#school {
+  font-size: 150%;
+  margin-bottom: 0;
+}
 #background-tint:before {
   background-color: rgba(0, 0, 0, 0.3);
+}
+#demo {
+  float:right;
+  width:47%;
+  margin-right:1%;
+}
+#footer {
+  margin:0;
+  font-size:3vh;
+  color:#2E2B2D;
+  font-weight:900;
 }
 .map {
   background-image: url(map.png);
@@ -200,8 +221,9 @@ h1{
   display: block;
   /*min-height: 989px;*/
   /*min-width: 404px;*/
-  -webkit-transform: translate3d(14vw, 0, 0);
-  transform: translate3d(14vw, 0, 0);
+  /*-webkit-transform: translate3d(14vw, 0, 0);*/
+  background-position-x: center;
+  /*transform: translate3d(14vw, 0, 0);*/
   margin-top: 19vh;
   background-size: 75vw 75vh;
   position: relative;
@@ -210,17 +232,45 @@ h1{
   width: 100%;
 }
 .gps-ring {
-    border: 3px solid #c24141;
-    -webkit-border-radius: 30px;
-    height: 18px;
-    width: 18px;
-    left: 19%;
-    top: 35%;
-    position: absolute;
-    -webkit-animation: pulsate 1s ease-out;
-    -webkit-animation-iteration-count: infinite; 
-    opacity: 0.0;
+  border: 3px solid #c24141;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  height: 18px;
+  width: 18px;
+  left: 31%;
+  top: 35%;
+  position: absolute;
+  -webkit-animation: pulsate 1s ease-out;
+  -webkit-animation-iteration-count: infinite; 
+  -moz-animation: pulsate 1s ease-out;
+  -moz-animation-iteration-count: infinite;
+  opacity: 0.0;
 }
+
+@-moz-keyframes pulsate {
+    0%
+    {
+      -moz-transform: scale(0.1, 0.1); opacity: 0.0;
+    }
+    25% 
+    {
+      opacity: 0.5;
+    }
+    50%
+    {
+      opacity: 1.0;
+    }
+    75%
+    {
+      opacity: 0.5;
+    }
+    100%
+    {
+      -moz-transform: scale(1.2, 1.2); opacity: 0.0;
+    }
+}
+
 @-webkit-keyframes pulsate {
     0%
     {
@@ -243,7 +293,6 @@ h1{
     {
       -webkit-transform: scale(1.2, 1.2); opacity: 0.0;
             transform: scale(1.2, 1.2) opacity 0.0;
-
     }
 }
 

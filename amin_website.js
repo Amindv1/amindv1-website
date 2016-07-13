@@ -13,6 +13,7 @@ function parallaxScroll(evt) {
   console.log("what about this")
   if (isFirefox) {
     //Set delta for Firefox
+    scrollSensitivitySetting = 300;
     delta = evt.detail * (-120);
   } else if (isIe) {
     //Set delta for IE
